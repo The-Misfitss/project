@@ -7,7 +7,6 @@ import numpy as np
 # Set seed for reproducibility
 np.random.seed(42)
 
-
 # Function to generate dummy data and append to existing CSV
 def generate_and_append_data(file_path, num_machines=5, num_sensors=3, freq='H'):
     try:
