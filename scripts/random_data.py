@@ -71,5 +71,7 @@ if __name__ == "__main__":
         current_dir = os.getcwd()
         save_path = os.path.join(current_dir, 'data/raw/sensor_data.csv')
         dummy_data.to_csv(save_path, index=False)
+        print(f'Dummy data saved to {save_path}')
+        print(dummy_data.head())
     else:
         generate_and_append_data(data_file_path)
