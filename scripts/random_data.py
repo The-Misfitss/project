@@ -69,7 +69,7 @@ if __name__ == "__main__":
 
         # Save dummy data to CSV file
         current_dir = os.getcwd()
-        save_path = os.path.join(current_dir, '/data/raw/sensor_data.csv')
+        save_path = os.path.join(current_dir, 'data/raw/sensor_data.csv')
         dummy_data.to_csv(save_path, index=False)
     else:
         generate_and_append_data(data_file_path)
