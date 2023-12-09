@@ -56,7 +56,7 @@ def generate_dummy_data(start_date, end_date, num_machines=5, num_sensors=3, fre
 
 
 if __name__ == "__main__":
-    data_file_path = '../data/raw/sensor_data.csv'
+    data_file_path = 'data/raw/sensor_data.csv'
     data_file_path = os.path.join(os.getcwd(), data_file_path)
     # check if sensor_data.csv exists
     if not os.path.exists(data_file_path): 
@@ -69,9 +69,11 @@ if __name__ == "__main__":
 
         # Save dummy data to CSV file
         current_dir = os.getcwd()
-        save_path = os.path.join(current_dir, 'data/raw/sensor_data.csv')
+        save_path = os.path.join(current_dir, data_file_path)
         dummy_data.to_csv(save_path, index=False)
         print(f'Dummy data saved to {save_path}')
         print(dummy_data.head())
     else:
         generate_and_append_data(data_file_path)
+        print(f'Dummy data appended to {data_file_path}')
+        print(pd.read_csv(data_file_path).tail())
