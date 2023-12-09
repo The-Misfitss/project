@@ -28,7 +28,7 @@ jobs:
 
       - name: Run DVC Checkout
         run: |
-          dvc checkout
+          dvc pull
 
       - name: Run your commands
         run: |
