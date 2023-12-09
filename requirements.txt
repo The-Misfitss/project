@@ -1,3 +1,4 @@
 pandas
 numpy
 dvc_gdrive
+scikit-learn

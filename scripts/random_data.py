@@ -7,6 +7,7 @@ import numpy as np
 # Set seed for reproducibility
 np.random.seed(42)
 
+
 # Function to generate dummy data and append to existing CSV
 def generate_and_append_data(file_path, num_machines=5, num_sensors=3, freq='H'):
     try:
@@ -48,7 +49,7 @@ def generate_dummy_data(start_date, end_date, num_machines=5, num_sensors=3, fre
             for sensor_id in sensor_ids:
                 data['Timestamp'].append(date)
                 data['Machine_ID'].append(machine_id)
-                data['Sensor_ID'].append(sensor_id)
+                data['Sensor_ID'].append(sensor_id)  
                 # Simulate sensor readings as random values
                 data['Reading'].append(np.random.normal(loc=100, scale=20))
 
@@ -68,15 +69,6 @@ if __name__ == "__main__":
         dummy_data = generate_dummy_data(start_date, end_date, num_machines=5, num_sensors=3)
 
         # Save dummy data to CSV file
-        current_dir = os.getcwd()
-        save_path = os.path.join(current_dir, data_file_path)
-        dummy_data.to_csv(save_path, index=False)
-        print(f'Dummy data saved to {save_path}')
-        print(dummy_data.head())
+        dummy_data.to_csv(data_file_path, index=False)
     else:
         generate_and_append_data(data_file_path)
-        print(f'Dummy data appended to {data_file_path}')
-        print(pd.read_csv(data_file_path).tail())
-        generate_and_append_data(data_file_path)
-        print(f'Dummy data appended to {data_file_path}')
-        print(pd.read_csv(data_file_path).tail())
