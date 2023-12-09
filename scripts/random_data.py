@@ -77,3 +77,6 @@ if __name__ == "__main__":
         generate_and_append_data(data_file_path)
         print(f'Dummy data appended to {data_file_path}')
         print(pd.read_csv(data_file_path).tail())
+        generate_and_append_data(data_file_path)
+        print(f'Dummy data appended to {data_file_path}')
+        print(pd.read_csv(data_file_path).tail())
