@@ -30,9 +30,8 @@ jobs:
       - name: Run DVC pull
         run: |
           
-          dvc clean -f
           dvc remote add --default drive gdrive://1FKchucezQ1fGfWI0Lbu2MtMBeBRaeKJb
-          dvc checkout
+          dvc pull
         #   python scripts/random_data.py
         #   python scripts/random_data.py
       - name: Run your commands
