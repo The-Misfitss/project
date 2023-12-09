@@ -68,6 +68,8 @@ if __name__ == "__main__":
         dummy_data = generate_dummy_data(start_date, end_date, num_machines=5, num_sensors=3)
 
         # Save dummy data to CSV file
-        dummy_data.to_csv('../data/raw/sensor_data.csv', index=False)
+        current_dir = os.getcwd()
+        save_path = os.path.join(current_dir, '/data/raw/sensor_data.csv')
+        dummy_data.to_csv(save_path, index=False)
     else:
         generate_and_append_data(data_file_path)
