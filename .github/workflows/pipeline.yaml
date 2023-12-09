@@ -1,38 +1,38 @@
-# name: Generate and preprocess the data
+name: Generate and preprocess the data
 
-# on:
-#   push:
-#     branches:
-#       - main
+on:
+  push:
+    branches:
+      - main
 
-# jobs:
-#   run:
-#     runs-on: ubuntu-latest
+jobs:
+  run:
+    runs-on: ubuntu-latest
 
-#     steps:
+    steps:
       
-#       - name: Checkout Repository
-#         uses: actions/checkout@v2
+      - name: Checkout Repository
+        uses: actions/checkout@v2
 
-#       - name: Set up Python
-#         uses: actions/setup-python@v2
-#         with:
-#           python-version: 3.8
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
 
-#       - name: Install DVC
-#         run: |
-#           pip install dvc
+      - name: Install DVC
+        run: |
+          pip install dvc
 
-#       - name: Install Dependencies
-#         run: |
-#           pip install -r requirements.txt
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
 
-#       - name: Run DVC pull
-#         run: |
-#           # dvc remote add --default drive gdrive://1FKchucezQ1fGfWI0Lbu2MtMBeBRaeKJb
-#           # dvc checkout
-#           python scripts/random_data.py
-#           python scripts/random_data.py
-#       - name: Run your commands
-#         run: |
-#           # Add your custom commands here for data processing, model training, etc.
+      - name: Run DVC pull
+        run: |
+          dvc remote add --default drive gdrive://1FKchucezQ1fGfWI0Lbu2MtMBeBRaeKJb
+          dvc checkout
+        #   python scripts/random_data.py
+        #   python scripts/random_data.py
+      - name: Run your commands
+        run: |
+          # Add your custom commands here for data processing, model training, etc.
