@@ -1,0 +1,21 @@
+name: Generate and preprocess the data
+on: [push]
+jobs:
+  run:
+    permissions: write-all
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Running_updates
+        env: 
+          GH_TOKEN: ${{ github.token }}
+          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
+        run: |
+          pip install -r requirements.txt 
+          dvc checkout
+          
+        #   dvc repro
+        #   git fetch --prune
+          
+        #   dvc metrics diff --md master > report.md
+        #   gh pr comment ${{github.event.pull_request.number}} -F report.md
