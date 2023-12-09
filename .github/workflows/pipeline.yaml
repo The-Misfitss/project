@@ -29,7 +29,9 @@ jobs:
 
       - name: Run DVC pull
         run: |
-          run ls -la
+          # dvc remote add --default drive gdrive://1FKchucezQ1fGfWI0Lbu2MtMBeBRaeKJb
+          # dvc checkout
+          ls -la
 
       - name: Run your commands
         run: |
