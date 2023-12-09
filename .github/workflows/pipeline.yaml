@@ -28,9 +28,9 @@ jobs:
 
       - name: Run DVC Checkout
         run: |
-          dvc pull
+          dvc remote add --default drive gdrive://1FKchucezQ1fGfWI0Lbu2MtMBeBRaeKJb
+          dvc checkout
 
       - name: Run your commands
         run: |
           # Add your custom commands here for data processing, model training, etc.
-
