@@ -30,3 +30,6 @@ jobs:
       - name: Run dvc repro
         run: |
           dvc repro
+      - name: Push data to DVC remote
+        run: |
+          dvc push
