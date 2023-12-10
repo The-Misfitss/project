@@ -29,17 +29,27 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Download latest data from DVC remote
+      - name: Download the data from DVC remote
         run: |
-          dvc fetch --run-cache
+          dvc pull
 
       - name: Run dvc repro
         run: |
           dvc repro
+
+      - name: DVC Add
+        run: |
+          dvc add data/raw/sensor_data.csv data/processed/train/train.csv data/processed/test/test.csv
+        
       - name: Push data to DVC remote
         run: |
           dvc push -r myremote
 
-      - name: Print the output
+      - name: print last 100 lines of data
         run: |
-          cat data/raw/sensor_data.csv
+          tail -n 100 data/raw/sensor_data.csv
+      
+      - name: Add, commit and push the changes
+        run: |
+          git add .
+          git commit -m "Update data"
