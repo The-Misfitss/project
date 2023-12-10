@@ -46,7 +46,7 @@ jobs:
       
       - name: print last 100 test of data
         run: |
-          tail -n 100 data/processed/test/test/csv
+          tail -n 100 data/processed/test/test.csv
 
       - name: Run dvc repro
         run: |
