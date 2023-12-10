@@ -18,8 +18,5 @@ stages:
       - scripts/train_model.py
       - data/processed/train.csv
       - data/processed/test.csv
-    outs:
-      - model/random_forest_model.joblib
-
 
     
