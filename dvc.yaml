@@ -16,7 +16,7 @@ stages:
     cmd: python scripts/train_model.py data/processed/train/train.csv data/processed/test/test.csv model/random_forest_model.joblib
     deps:
       - scripts/train_model.py
-      - data/processed/train/rain.csv
+      - data/processed/train/train.csv
       - data/processed/test/test.csv
 
     
