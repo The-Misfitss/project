@@ -22,6 +22,7 @@ jobs:
       - name: Install DVC
         run: |
           pip install dvc
+          dvc remote add -d myremote gdrive://1FKchucezQ1fGfWI0Lbu2MtMBeBRaeKJb
           dvc remote modify remote gdrive_use_service_account true
           dvc remote modify remote --local \
           gdrive_service_account_json_file_path mlops-secret.json
@@ -35,5 +36,3 @@ jobs:
       - name: Push data to DVC remote
         run: |
           dvc push
-        env:
-          GDRIVE_CREDENTIALS_PATH: ${{ secrets.DVC_GDRIVE_CREDENTIALS }}
