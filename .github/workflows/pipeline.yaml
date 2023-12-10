@@ -33,3 +33,5 @@ jobs:
       - name: Push data to DVC remote
         run: |
           dvc push
+        env:
+          GDRIVE_CREDENTIALS_PATH: ${{ secrets.DVC_GDRIVE_CREDENTIALS }}
