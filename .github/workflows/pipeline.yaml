@@ -61,7 +61,7 @@ jobs:
   
       - name: Add, commit and push the changes
         run: |
-          git pull 
+          git pull origin main
           git add .
           git commit -m "Update data"
-          git push
+          git push origin main
