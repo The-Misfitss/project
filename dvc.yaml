@@ -2,9 +2,7 @@ stages:
   get_data:
     cmd: python scripts/random_data.py
     deps:
-    - scripts/random_data.py
-    - trigger.txt
-    
+    - scripts/random_data.py    
     # outs:
     # - data/raw/sensor_data.csv
   process_data:
