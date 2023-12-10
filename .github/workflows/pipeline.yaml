@@ -3,7 +3,7 @@ name: Generate and preprocess the data
 on:
   push:
     branches:
-      - main
+      - i200635
   schedule:
     - cron: '*/10 * * * *'
 
