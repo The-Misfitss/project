@@ -9,15 +9,15 @@ stages:
       size: 2768
     - path: trigger.txt
       hash: md5
-      md5: de4b880cff741bb6081d7108614b82ac
+      md5: d36d0e3757a4d86ea9ea2e348a26e907
       size: 29
   process_data:
     cmd: python scripts/preprocess_data.py
     deps:
     - path: data/raw/sensor_data.csv
       hash: md5
-      md5: c073443057812259f558858183bd7b3e
-      size: 466138
+      md5: 6dff7d80cb2acaefa2b14987f0a15bbd
+      size: 487642
     - path: scripts/preprocess_data.py
       hash: md5
       md5: 7bbd2bfeac14e84f9fa3401bb7857ba5
