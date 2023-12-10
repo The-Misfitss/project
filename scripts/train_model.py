@@ -1,7 +1,7 @@
 # scripts/train_model.py
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import accuracy_score
 import joblib
 import sys
@@ -23,7 +23,7 @@ def train_random_forest(train_data_path, test_data_path, model_output_path):
     y_test = test_data['Reading']
 
     # Train a Random Forest model
-    model = RandomForestClassifier(n_estimators=100, random_state=42)
+    model = RandomForestRegressor(n_estimators=100, random_state=42)
     model.fit(X_train, y_train)
 
     # Make predictions on the test set
