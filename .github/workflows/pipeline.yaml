@@ -31,7 +31,7 @@ jobs:
 
       - name: Download latest data from DVC remote
         run: |
-          dvc pull
+          dvc fetch --run-cache
 
       - name: Run dvc repro
         run: |
