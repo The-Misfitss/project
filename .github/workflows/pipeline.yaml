@@ -44,6 +44,14 @@ jobs:
         run: |
           dvc repro
 
+      - name: print last 100 training data
+        run: |
+          tail -n 100 data/processed/train/train.csv
+      
+      - name: print last 100 test of data
+        run: |
+          tail -n 100 data/processed/test/test/csv
+
       - name: DVC Add
         run: |
           dvc add data/raw/sensor_data.csv data/processed/train/train.csv data/processed/test/test.csv
@@ -51,10 +59,6 @@ jobs:
       - name: Push data to DVC remote
         run: |
           dvc push -r myremote
-
-      - name: print last 100 lines of data
-        run: |
-          tail -n 100 data/raw/sensor_data.csv
 
       - name: Configure Git
         run: |
