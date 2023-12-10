@@ -12,11 +12,14 @@ def train_random_forest(train_data_path, test_data_path, model_output_path):
     train_data = pd.read_csv(train_data_path)
     test_data = pd.read_csv(test_data_path)
 
+    # Specify the columns to be used as features
+    feature_columns = ['year', 'month', 'day', 'hour', 'Machine_ID', 'Sensor_ID']
+
     # Assume 'Reading' is the column you want to predict
-    X_train = train_data.drop('Reading', axis=1)
+    X_train = train_data[feature_columns]
     y_train = train_data['Reading']
     
-    X_test = test_data.drop('Reading', axis=1)
+    X_test = test_data[feature_columns]
     y_test = test_data['Reading']
 
     # Train a Random Forest model
@@ -51,3 +54,5 @@ if __name__ == "__main__":
     # Start MLflow run
     with mlflow.start_run():
         train_random_forest(train_data_path, test_data_path, model_output_path)
+
+# in this code i have updated the input columns and output to resolve type issue 
