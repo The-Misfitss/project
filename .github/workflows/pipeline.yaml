@@ -40,10 +40,6 @@ jobs:
         run: |
           date > trigger.txt
 
-      - name: Run dvc repro
-        run: |
-          dvc repro
-
       - name: print last 100 training data
         run: |
           tail -n 100 data/processed/train/train.csv
@@ -51,6 +47,10 @@ jobs:
       - name: print last 100 test of data
         run: |
           tail -n 100 data/processed/test/test/csv
+
+      - name: Run dvc repro
+        run: |
+          dvc repro
 
       - name: DVC Add
         run: |
