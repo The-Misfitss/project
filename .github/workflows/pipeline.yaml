@@ -34,9 +34,9 @@ jobs:
         run: |
           dvc pull
 
-      - name: Generate data
+      - name: Trigger
         run: |
-          python scripts/random_data.py
+          date > trigger.txt
 
       - name: Run dvc repro
         run: |
