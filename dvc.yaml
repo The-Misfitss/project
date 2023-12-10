@@ -13,11 +13,11 @@ stages:
 
   
   train_model:
-    cmd: python scripts/train_model.py data/processed/train.csv.dvc data/processed/test.csv.dvc model/random_forest_model.joblib
+    cmd: python scripts/train_model.py data/processed/train.csv data/processed/test.csv model/random_forest_model.joblib
     deps:
       - scripts/train_model.py
-      - data/processed/train.csv.dvc
-      - data/processed/test.csv.dvc
+      - data/processed/train.csv
+      - data/processed/test.csv
     outs:
       - model/random_forest_model.joblib
 
