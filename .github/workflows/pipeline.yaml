@@ -29,9 +29,17 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Download latest data from DVC remote
+        run: |
+          dvc pull -r myremote
+
       - name: Run dvc repro
         run: |
           dvc repro
       - name: Push data to DVC remote
         run: |
           dvc push -r myremote
+
+      - name: Print the output
+        run: |
+          cat data/raw/sensor_data.csv
