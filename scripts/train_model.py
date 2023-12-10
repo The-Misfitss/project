@@ -1,8 +1,8 @@
 # scripts/train_model.py
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import accuracy_score
+from sklearn.ensemble import RandomForestRegressor  # Update the import
+from sklearn.metrics import mean_squared_error
 import joblib
 import sys
 import mlflow
@@ -22,21 +22,21 @@ def train_random_forest(train_data_path, test_data_path, model_output_path):
     X_test = test_data[feature_columns]
     y_test = test_data['Reading']
 
-    # Train a Random Forest model
+    # Train a Random Forest regression model
     model = RandomForestRegressor(n_estimators=100, random_state=42)
     model.fit(X_train, y_train)
 
     # Make predictions on the test set
     y_pred = model.predict(X_test)
 
-    # Evaluate the model
-    accuracy = accuracy_score(y_test, y_pred)
-    print(f'Accuracy: {accuracy}')
+    # Evaluate the model using mean squared error (adjust as needed)
+    mse = mean_squared_error(y_test, y_pred)
+    print(f'Mean Squared Error: {mse}')
 
     # Log parameters and metrics to MLflow
     mlflow.log_param("n_estimators", 100)
     mlflow.log_param("random_state", 42)
-    mlflow.log_metric("accuracy", accuracy)
+    mlflow.log_metric("mean_squared_error", mse)
 
     # Log the trained model to MLflow
     mlflow.sklearn.log_model(model, "model")
@@ -54,5 +54,3 @@ if __name__ == "__main__":
     # Start MLflow run
     with mlflow.start_run():
         train_random_forest(train_data_path, test_data_path, model_output_path)
-
-# in this code i have updated the input columns and output to resolve type issue 
