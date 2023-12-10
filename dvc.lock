@@ -16,8 +16,8 @@ stages:
     deps:
     - path: data/raw/sensor_data.csv
       hash: md5
-      md5: ce945e03900325b9ccfee05cac76abc6
-      size: 251098
+      md5: 784ead9e285d2e2efcfaac237b5bc1b5
+      size: 272602
     - path: scripts/preprocess_data.py
       hash: md5
       md5: 7bbd2bfeac14e84f9fa3401bb7857ba5
