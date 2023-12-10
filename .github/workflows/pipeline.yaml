@@ -48,7 +48,12 @@ jobs:
       - name: print last 100 lines of data
         run: |
           tail -n 100 data/raw/sensor_data.csv
-      
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "hammadhabib80@gmail.com"
+          git config --global user.name "Hammad Habib"
+  
       - name: Add, commit and push the changes
         run: |
           git add .
