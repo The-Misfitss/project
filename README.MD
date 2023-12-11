@@ -1,4 +1,4 @@
-# MLOps Project Documentation
+# MLOps Project 
 
 ## 1. Data Pipeline Setup
 
