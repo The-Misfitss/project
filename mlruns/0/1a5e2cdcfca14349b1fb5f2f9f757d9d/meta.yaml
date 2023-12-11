@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/project/project/mlruns/0/1a5e2cdcfca14349b1fb5f2f9f757d9d/artifacts
+end_time: 1702301829427
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1a5e2cdcfca14349b1fb5f2f9f757d9d
+run_name: rumbling-ant-891
+run_uuid: 1a5e2cdcfca14349b1fb5f2f9f757d9d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1702301825162
+status: 3
+tags: []
+user_id: runner
