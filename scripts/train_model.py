@@ -40,6 +40,8 @@ def train_random_forest(train_data_path, test_data_path, model_output_path):
 
     # Log the trained model to MLflow
     mlflow.sklearn.log_model(model, "model")
+    model_name="sensor_reading_predictor"
+    mlflow.register_model(f"runs:/{mlflow.active_run().info.run_id}/model", model_name)
 
     # Save the trained model
     joblib.dump(model, model_output_path)
