@@ -10,3 +10,8 @@ i200468
 
 --
 i200635
+Model selection
+Model Training
+Hyperparameters tunning
+ML flow integration
+Model Registry
