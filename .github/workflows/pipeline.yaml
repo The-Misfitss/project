@@ -3,7 +3,7 @@ name: Generate and preprocess the data
 on:
   push:
     branches:
-      - main
+      - i200635
   schedule:
     # - cron: '*/10 * * * *' # Runs every 10 minutes
     - cron: '0 */3 * * *'  # Runs every 3 hours
@@ -41,6 +41,14 @@ jobs:
         run: |
           date > trigger.txt
 
+      - name: print last 100 training data
+        run: |
+          tail -n 100 data/processed/train/train.csv
+      
+      - name: print last 100 test of data
+        run: |
+          tail -n 100 data/processed/test/test.csv
+
       - name: Run dvc repro
         run: |
           dvc repro
@@ -52,10 +60,6 @@ jobs:
       - name: Push data to DVC remote
         run: |
           dvc push -r myremote
-
-      - name: print last 100 lines of data
-        run: |
-          tail -n 100 data/raw/sensor_data.csv
 
       - name: Configure Git
         run: |
