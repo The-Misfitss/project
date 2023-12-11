@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/project/project/mlruns/0/8700b8d4b0084e0ebb7546b3f1befa83/artifacts
+end_time: 1702303760394
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8700b8d4b0084e0ebb7546b3f1befa83
+run_name: nebulous-bee-541
+run_uuid: 8700b8d4b0084e0ebb7546b3f1befa83
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1702303755919
+status: 3
+tags: []
+user_id: runner
