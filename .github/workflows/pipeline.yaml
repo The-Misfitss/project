@@ -66,10 +66,10 @@ jobs:
   
       - name: Add, commit and push the changes
         run: |
-          git pull origin main
+          git pull origin i200864
           git add .
           git commit -m "Update data"
-          git push origin main
+          git push origin i200864
 
 
 
