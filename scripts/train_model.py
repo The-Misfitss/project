@@ -23,7 +23,7 @@ def train_random_forest(train_data_path, test_data_path, model_output_path):
     y_test = test_data['Reading']
 
     # Train a Random Forest regression model
-    model = RandomForestRegressor(n_estimators=100, random_state=42)
+    model = RandomForestRegressor(n_estimators=110, random_state=32)
     model.fit(X_train, y_train)
 
     # Make predictions on the test set
