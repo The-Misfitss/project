@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/project/project/mlruns/0/7f886618dd754e07bd0c84b9c81f68b7/artifacts
+end_time: 1702289580132
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7f886618dd754e07bd0c84b9c81f68b7
+run_name: able-robin-845
+run_uuid: 7f886618dd754e07bd0c84b9c81f68b7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1702289576234
+status: 3
+tags: []
+user_id: runner
