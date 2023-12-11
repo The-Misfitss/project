@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/project/project/mlruns/0/c365b76c242443d58367d51ddd38ef4e/artifacts
+end_time: 1702302443342
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: c365b76c242443d58367d51ddd38ef4e
+run_name: youthful-squid-507
+run_uuid: c365b76c242443d58367d51ddd38ef4e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1702302439022
+status: 3
+tags: []
+user_id: runner
