@@ -48,14 +48,14 @@ jobs:
       - name: print last 100 test of data
         run: |
           tail -n 100 data/processed/test/test.csv
-      
-      - name: Print the contents of the model (Directory)
-        run: |
-          ls model/
 
       - name: Run dvc repro
         run: |
           dvc repro
+    
+      - name: Print the contents of the model (Directory)
+        run: |
+          ls model/
 
       - name: DVC Add
         run: |
