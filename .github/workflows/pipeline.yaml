@@ -48,6 +48,10 @@ jobs:
       - name: print last 100 test of data
         run: |
           tail -n 100 data/processed/test/test.csv
+      
+      - name: Print the contents of the model (Directory)
+        run: /
+          ls model/
 
       - name: Run dvc repro
         run: |
@@ -55,7 +59,7 @@ jobs:
 
       - name: DVC Add
         run: |
-          dvc add data/raw/sensor_data.csv data/processed/train/train.csv data/processed/test/test.csv
+          dvc add data/raw/sensor_data.csv data/processed/train/train.csv data/processed/test/test.csv model/random_forest_model.joblib
         
       - name: Push data to DVC remote
         run: |
@@ -72,11 +76,3 @@ jobs:
           git add .
           git commit -m "Update data"
           git push origin main
-
-
-
-
-
-
-
-          
