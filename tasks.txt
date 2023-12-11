@@ -1,0 +1,12 @@
+i200864
+Scaffolding
+Data Acquisition
+Data preprocessing (Normalization & Train test split)
+Setting the pipeline using github actions
+
+--
+i200468
+
+
+--
+i200635
