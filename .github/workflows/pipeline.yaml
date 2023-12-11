@@ -50,7 +50,7 @@ jobs:
           tail -n 100 data/processed/test/test.csv
       
       - name: Print the contents of the model (Directory)
-        run: /
+        run: |
           ls model/
 
       - name: Run dvc repro
