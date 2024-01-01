@@ -39,7 +39,7 @@ def train_random_forest(train_data_path, test_data_path, model_output_path):
     mlflow.log_metric("mean_squared_error", mse)
 
     # Log the trained model to MLflow
-    # mlflow.sklearn.log_model(model, "model")
+    mlflow.sklearn.log_model(model, "model")
 
    
     # Register the model in the Model Registry
