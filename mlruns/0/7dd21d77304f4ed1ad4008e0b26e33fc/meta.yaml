@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/project/project/mlruns/0/7dd21d77304f4ed1ad4008e0b26e33fc/artifacts
+end_time: 1704126806453
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7dd21d77304f4ed1ad4008e0b26e33fc
+run_name: valuable-hare-726
+run_uuid: 7dd21d77304f4ed1ad4008e0b26e33fc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1704126803461
+status: 3
+tags: []
+user_id: runner
