@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  schedule:
+  # schedule:
     # - cron: '*/10 * * * *' # Runs every 10 minutes
     # - cron: '0 */3 * * *'  # Runs every 3 hours
     # - cron: '0 0 * * *'  # Runs every day at midnight (00:00)
