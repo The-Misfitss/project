@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/project/project/mlruns/0/032722ca0f87458182df8a4bdc0fe628/artifacts
+end_time: 1704220928260
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 032722ca0f87458182df8a4bdc0fe628
+run_name: abrasive-mouse-991
+run_uuid: 032722ca0f87458182df8a4bdc0fe628
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1704220742135
+status: 3
+tags: []
+user_id: runner

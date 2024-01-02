@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/project/project/mlruns/0/2da0a605a7134585966f38727804b822/artifacts
+end_time: 1704207213716
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2da0a605a7134585966f38727804b822
+run_name: adorable-mare-756
+run_uuid: 2da0a605a7134585966f38727804b822
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1704207040797
+status: 3
+tags: []
+user_id: runner

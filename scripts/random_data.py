@@ -3,6 +3,7 @@ import os
 from datetime import datetime, timedelta
 import subprocess
 import numpy as np
+import preprocess_data
 
 # Set seed for reproducibility
 np.random.seed(42)
@@ -24,6 +25,12 @@ def generate_and_append_data(file_path, num_machines=5, num_sensors=3, freq='H')
     end_date = start_date + timedelta(days=1)
 
     new_data = generate_dummy_data(start_date, end_date, num_machines, num_sensors, freq)
+
+    new_data_file_path = 'data/processed/new_data.csv'
+    new_data_file_path = os.path.join(os.getcwd(), new_data_file_path)
+    new_data = preprocess_data.normalize(new_data)
+    new_data.to_csv(new_data_file_path, index=False)
+
     updated_data = pd.concat([existing_data, new_data], ignore_index=True)
 
     updated_data.to_csv(file_path, index=False)
