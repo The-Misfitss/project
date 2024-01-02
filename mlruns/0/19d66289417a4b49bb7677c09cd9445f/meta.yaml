@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/project/project/mlruns/0/19d66289417a4b49bb7677c09cd9445f/artifacts
+end_time: 1704175891489
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 19d66289417a4b49bb7677c09cd9445f
+run_name: upset-dove-898
+run_uuid: 19d66289417a4b49bb7677c09cd9445f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1704175727137
+status: 3
+tags: []
+user_id: runner
