@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/project/project/mlruns/0/60b1994ebb4c4e8d80e2ca8275f33d34/artifacts
+end_time: 1704174499250
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 60b1994ebb4c4e8d80e2ca8275f33d34
+run_name: agreeable-toad-600
+run_uuid: 60b1994ebb4c4e8d80e2ca8275f33d34
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1704174371075
+status: 3
+tags: []
+user_id: runner
