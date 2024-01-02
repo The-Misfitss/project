@@ -37,11 +37,6 @@ def train_random_forest(train_data_path, test_data_path, model_output_path):
     grid_search = GridSearchCV(rf, param_grid, scoring='neg_mean_squared_error', cv=5)
     grid_search.fit(X_train, y_train)
 
-    # Log parameters and metrics for all models in the grid search
-    for params, mean_score, scores in grid_search.grid_scores_:
-        mlflow.log_params(params)
-        mlflow.log_metric("mean_squared_error", -mean_score)
-
     # Get the best model from the grid search
     best_model = grid_search.best_estimator_
 
