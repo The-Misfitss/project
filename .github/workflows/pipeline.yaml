@@ -93,7 +93,6 @@ jobs:
       # ----------------------------------------------
     
       - name: Print the contents of the model (Directory)
-        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.25
         run: |
           ls model/
 
