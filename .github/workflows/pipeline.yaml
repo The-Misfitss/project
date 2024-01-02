@@ -70,55 +70,50 @@ jobs:
           echo "::set-output name=mse::$mse"
 
       - name: Run dvc pipeline
-        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.25
         run: |
           dvc repro
-
-      - name: Print the newly generated data
-        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
-        run: |
-          cat data/processed/new_data.csv
       
       # Deployment Stage
       - name: Login to Docker Hub
-        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.25
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
       - name: Build the Docker image
-        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.25
         run: docker build -t jawwadhabib/project:latest .
       
       - name: Push the Docker image
-        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.25
         run: docker push jawwadhabib/project:latest
       # ----------------------------------------------
     
       - name: Print the contents of the model (Directory)
-        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.25
         run: |
           ls model/
 
       - name: DVC Add
-        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.25
         run: |
           dvc add data/raw/sensor_data.csv data/processed/train/train.csv data/processed/test/test.csv model/random_forest_model.joblib
         
       - name: Push data to DVC remote
-        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.25
         run: |
           dvc push -r myremote
 
       - name: Configure Git
-        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.25
         run: |
           git config --global user.email "hammadhabib80@gmail.com"
           git config --global user.name "Hammad Habib"
   
       - name: Add, commit and push the changes
-        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.25
         run: |
           git pull origin main
           git add .
