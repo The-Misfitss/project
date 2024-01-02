@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/project/project/mlruns/0/e5cb897e4ef54fedbecd4a23e2be7f6b/artifacts
+end_time: 1704227726002
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e5cb897e4ef54fedbecd4a23e2be7f6b
+run_name: nosy-conch-894
+run_uuid: e5cb897e4ef54fedbecd4a23e2be7f6b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1704227505443
+status: 3
+tags: []
+user_id: runner
