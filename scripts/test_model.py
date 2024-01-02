@@ -32,9 +32,12 @@ def main():
     # Load data from the CSV file (adjust file path as needed)
     data = pd.read_csv('data/processed/new_data.csv')
     
+    # Specify the columns to be used as features
+    feature_columns = ['year', 'month', 'day', 'hour', 'Machine_ID', 'Sensor_ID']
+
     # Separate features and target variable
-    target_column = 'Sensor_Reading'
-    features = data.drop(columns=[target_column])
+    target_column = 'Reading'
+    features = data[feature_columns]
     target = data[target_column]
 
     # Update with actual Flask app URL
