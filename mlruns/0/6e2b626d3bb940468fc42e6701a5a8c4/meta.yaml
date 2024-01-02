@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/project/project/mlruns/0/6e2b626d3bb940468fc42e6701a5a8c4/artifacts
+end_time: 1704226933582
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6e2b626d3bb940468fc42e6701a5a8c4
+run_name: tasteful-finch-737
+run_uuid: 6e2b626d3bb940468fc42e6701a5a8c4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1704226709136
+status: 3
+tags: []
+user_id: runner

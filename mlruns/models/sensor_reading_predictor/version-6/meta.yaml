@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1704226933516
+current_stage: None
+description: null
+last_updated_timestamp: 1704226933516
+name: sensor_reading_predictor
+run_id: 6e2b626d3bb940468fc42e6701a5a8c4
+run_link: null
+source: file:///home/runner/work/project/project/mlruns/0/6e2b626d3bb940468fc42e6701a5a8c4/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///home/runner/work/project/project/mlruns/0/6e2b626d3bb940468fc42e6701a5a8c4/artifacts/model
+user_id: null
+version: 6
