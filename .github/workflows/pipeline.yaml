@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      
       - name: Checkout Repository
         uses: actions/checkout@v2
 
@@ -53,7 +52,7 @@ jobs:
         run: |
           dvc repro
 
-      -name: Print the newly generated data
+      - name: Print the newly generated data
         run: |
           cat data/processed/new_data.csv
       
