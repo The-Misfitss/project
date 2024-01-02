@@ -4,17 +4,13 @@ on:
   push:
     branches:
       - main
-  # schedule:
-    # - cron: '*/10 * * * *' # Runs every 10 minutes
-    # - cron: '0 */3 * * *'  # Runs every 3 hours
-    # - cron: '0 0 * * *'  # Runs every day at midnight (00:00)
+
 jobs:
   run:
     permissions: write-all
     runs-on: ubuntu-latest
 
     steps:
-      
       - name: Checkout Repository
         uses: actions/checkout@v2
 
@@ -29,6 +25,7 @@ jobs:
           dvc remote modify myremote gdrive_use_service_account true
           dvc remote modify myremote --local \
             gdrive_service_account_json_file_path mlops-secret.json
+      
       - name: Install Dependencies
         run: |
           pip install -r requirements.txt
@@ -49,42 +46,79 @@ jobs:
         run: |
           tail -n 100 data/processed/test/test.csv
 
-      - name: Run dvc repro
+      - name: Get New Live Data
+        run: |
+          dvc repro get_data
+
+      - name: Print the newly generated data
+        run: |
+          cat data/processed/new_data.csv
+
+      - name: Pull Docker Image from Docker Hub
+        run: docker pull jawwadhabib/project:latest
+
+      - name: Run Docker Container
+        run: docker run -d -p 5000:5000 jawwadhabib/project:latest
+
+      - name: Execute test_model.py
+        run: python scripts/test_model.py
+
+      - name: Read MSE from File
+        id: read_mse
+        run: |
+          mse=$(cat mse_result.txt)
+          echo "::set-output name=mse::$mse"
+
+      - name: Run dvc pipeline
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
         run: |
           dvc repro
+
+      - name: Print the newly generated data
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
+        run: |
+          cat data/processed/new_data.csv
       
       # Deployment Stage
       - name: Login to Docker Hub
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
       - name: Build the Docker image
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
         run: docker build -t jawwadhabib/project:latest .
       
       - name: Push the Docker image
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
         run: docker push jawwadhabib/project:latest
       # ----------------------------------------------
     
       - name: Print the contents of the model (Directory)
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
         run: |
           ls model/
 
       - name: DVC Add
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
         run: |
           dvc add data/raw/sensor_data.csv data/processed/train/train.csv data/processed/test/test.csv model/random_forest_model.joblib
         
       - name: Push data to DVC remote
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
         run: |
           dvc push -r myremote
 
       - name: Configure Git
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
         run: |
           git config --global user.email "hammadhabib80@gmail.com"
           git config --global user.name "Hammad Habib"
   
       - name: Add, commit and push the changes
+        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.1
         run: |
           git pull origin main
           git add .
