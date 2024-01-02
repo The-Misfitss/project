@@ -1,4 +1,4 @@
-name: Generate and preprocess the data
+name: MLOPS Pipeline
 
 on:
   push:
@@ -81,16 +81,15 @@ jobs:
       
       # Deployment Stage      
       - name: Build and Push the Docker image
-        if: ${{ fromJson(steps.read_mse.outputs.mse) }} > 0.25
         run: |
           mse=$(cat mse_result.txt)
-          if [ "$mse" '>' 0.3 ]; then
-            echo "MSE exceeds threshold. Deploying..."
-            docker build -t jawwadhabib/project:latest .
-            docker push jawwadhabib/project:latest
-          else
-            echo "MSE is below threshold. No deployment required."
-          fi
+            if [ "$mse" '>' 0.3 ]; then
+              echo "MSE exceeds threshold. Deploying..."
+              docker build -t jawwadhabib/project:latest .
+              docker push jawwadhabib/project:latest
+            else
+              echo "MSE is below threshold. No deployment required."
+            fi
       # ----------------------------------------------
     
       - name: Print the contents of the model (Directory)
