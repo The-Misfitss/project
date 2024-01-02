@@ -56,12 +56,10 @@ def train_random_forest(train_data_path, test_data_path, model_output_path):
     mlflow.log_params(grid_search.best_params_)
     mlflow.log_metric("mean_squared_error", mse)
 
-    # Compare metrics of all models
-    all_metrics = mlflow.search_runs().sort_values(by=['metrics.mean_squared_error'], ascending=True)
-
-    # Save the best model to the registry
-    best_run_id = all_metrics.iloc[0]['run_id']
-    mlflow.register_model(f"runs:/{best_run_id}/model", "sensor_reading_predictor")
+    # Log the trained model to MLflow
+    mlflow.sklearn.log_model(best_model, "model")
+    model_name = "sensor_reading_predictor"
+    mlflow.register_model(f"runs:/{mlflow.active_run().info.run_id}/model", model_name)
 
     # Save the trained model
     joblib.dump(best_model, model_output_path)
