@@ -10,7 +10,7 @@ jobs:
     permissions: write-all
     runs-on: ubuntu-latest
     env:
-      THRESHOLD: 0.3 # Define the threshold as an environment variable
+      THRESHOLD: 0.2 # Define the threshold as an environment variable
 
     steps:
       - name: Checkout Repository
