@@ -9,15 +9,15 @@ stages:
       size: 3023
     - path: trigger.txt
       hash: md5
-      md5: 32c7262d3324f3c31b5ec2079cf42171
+      md5: 2482b0cefc3c812162f53b2fc42e8b07
       size: 29
   process_data:
     cmd: python scripts/preprocess_data.py
     deps:
     - path: data/raw/sensor_data.csv
       hash: md5
-      md5: aeaef4c02120f0620bc0e5a33a003311
-      size: 1103477
+      md5: 92a9e83e7bcff5bc4b51c789bb1fbfe0
+      size: 1122408
     - path: scripts/preprocess_data.py
       hash: md5
       md5: 7bbd2bfeac14e84f9fa3401bb7857ba5
@@ -30,12 +30,12 @@ stages:
     deps:
     - path: data/processed/test/test.csv
       hash: md5
-      md5: 330dddf625259ddaf5d7ea6294facc86
-      size: 153885
+      md5: 0389dd2cdde3ae42d5fdca47cc872155
+      size: 157084
     - path: data/processed/train/train.csv
       hash: md5
-      md5: 636ab053b5aebb7e5ca6c1e276348637
-      size: 615342
+      md5: 76ef3e01f847f638ebed7d6a11ed01f9
+      size: 628114
     - path: scripts/train_model.py
       hash: md5
       md5: 8fa3747567193abb8dc39e23e845a782

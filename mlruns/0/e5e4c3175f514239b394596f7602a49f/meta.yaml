@@ -1,0 +1,15 @@
+artifact_uri: file:///home/runner/work/project/project/mlruns/0/e5e4c3175f514239b394596f7602a49f/artifacts
+end_time: 1704337602251
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e5e4c3175f514239b394596f7602a49f
+run_name: placid-robin-57
+run_uuid: e5e4c3175f514239b394596f7602a49f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1704337393613
+status: 3
+tags: []
+user_id: runner
