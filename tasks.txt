@@ -6,8 +6,9 @@ Setting the pipeline using github actions
 
 --
 i200468
-
-
+Docker image building
+Deployment
+Monitoring (Concept drift)
 --
 i200635
 Model selection
