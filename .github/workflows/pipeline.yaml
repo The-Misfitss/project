@@ -100,27 +100,15 @@ jobs:
 
       - name: DVC Add data and Push to DVC remote
         run: |
-          mse=$(cat mse_result.txt)
-          if [ "$mse" '>' "${{ env.THRESHOLD }}" ]; then
-            echo "MSE exceeds threshold. Pushing updated data to remote DVC..."
-            dvc add data/raw/sensor_data.csv data/processed/train/train.csv data/processed/test/test.csv model/random_forest_model.joblib
-            dvc push -r myremote
-          else
-            echo "MSE is below threshold. No DVC push required."
-          fi
+          dvc add data/raw/sensor_data.csv data/processed/train/train.csv data/processed/test/test.csv model/random_forest_model.joblib
+          dvc push -r myremote
 
       - name: Configure, Add, Commit, Push to Github
         run: |
-          mse=$(cat mse_result.txt)
-          if [ "$mse" '>' "${{ env.THRESHOLD }}" ]; then
-            echo "MSE exceeds threshold. Pushing Changes to Github..."
-            git config --global user.email "hammadhabib80@gmail.com"
-            git config --global user.name "Hammad Habib"
+          git config --global user.email "hammadhabib80@gmail.com"
+          git config --global user.name "Hammad Habib"
 
-            git pull origin main
-            git add .
-            git commit -m "Update data"
-            git push origin main
-          else
-            echo "MSE is below threshold. No Git Push required."
-          fi
+          git pull origin main
+          git add .
+          git commit -m "Update data"
+          git push origin main
